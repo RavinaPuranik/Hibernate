@@ -1,0 +1,25 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+ <hibernate-mapping>
+ <class name="beans.Employee">
+ <id name="id"/>
+ <property name="name" />
+ <property name="email" />
+ <property name="salary" />
+ 
+ <union-subclass name="beans.SEmployee" table="Semployee">
+ <property name="tools"/>
+ </union-subclass>
+ 
+ <union-subclass name="beans.HEmployee" table="Hemployee">
+ <property name="wh"/>
+ </union-subclass>
+ 
+ <union-subclass name="beans.Admin" table="Admin">
+ <property name="branchname"/>
+ </union-subclass>
+ 
+ </class>
+ </hibernate-mapping>
